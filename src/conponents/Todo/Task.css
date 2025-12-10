@@ -1,0 +1,83 @@
+.task{
+    background-color: rgb(17, 17, 17);
+    padding: 15px;
+    box-shadow: 0 0 5px green;
+    border-radius: 10px;
+}
+.task-subc{
+    /* border-bottom: 2px solid rgb(59, 156, 2);
+    padding-bottom: 5px; */
+    & p{
+        font-size: 1.2rem;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        letter-spacing: 0.8px;
+        color: rgb(21, 255, 0);
+        font-weight: 600;
+        /* border-bottom: 1px solid rgb(130, 243, 0); */
+        text-decoration:underline;
+    }
+}
+.task-subc .task-fun button{
+    padding: 8px 20px;
+    border: none;
+    border-radius: 10px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: 600;
+    background-color:  rgb(71, 11, 128);
+    cursor: pointer;
+    color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.822);
+    &:hover{
+       background-color:rgb(0, 219, 0);
+       color: black;
+    }
+}
+.task-subc .task-fun .view-icon{
+    font-size: 1.6rem;
+    margin-right: 7px;
+    cursor: pointer;
+    color: rgb(20, 20, 20);
+    transition: 0.2s;
+    /* &:hover{
+        transform: rotate(180deg);
+    } */
+}
+.task .task-body{
+    font-size: 1.2rem;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: rgb(187, 187, 187);
+    letter-spacing: 0.5px;
+}
+
+/* media query */
+@media (max-width:776px) {
+    .task{
+        padding: 10px;
+    }
+    .task-subc p{
+        font-size: 1.1rem;
+    }
+    .task .task-body{
+        font-size: 1rem;
+    }
+    .task-subc .task-fun{
+        gap: 10px;
+    }
+    .task-subc .task-fun button{
+        font-size: 0.89rem;
+        padding: 8px 15px;
+        letter-spacing: 0.5px;
+    }
+}
+@media (max-width:476px){
+   .task-subc p{
+        font-size: 1rem;
+    }
+    .task .task-body{
+        font-size: 0.9rem;
+    }
+    .task-subc .task-fun button{
+        font-size: 0.7rem;
+        padding: 8px 10px;
+    }
+}

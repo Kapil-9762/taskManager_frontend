@@ -1,0 +1,101 @@
+.navbar{
+    padding-top: 8px;
+    position: sticky;
+    top: 0;
+}
+.nav-items{
+    padding: 10px 20px;
+    background-color: rgb(35, 192, 0);
+    border-radius: 10px;
+
+}
+.nav-items .nav-logo{
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    cursor: pointer;
+    &:hover{
+        text-shadow: 0 0 10px aqua;
+    }
+}
+.nav-items .items .item{
+    font-size: 1.1rem;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    color: black;
+    font-weight: 600;
+}
+.nav-items .items .item:nth-child(-n + 3){
+    position: relative;
+    &::after{
+        content: "";
+        width:0%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        border-bottom: 2px solid rgb(0, 232, 232); 
+        transition: 0.2s;     
+    }
+    &:hover{
+        color: rgb(0, 232, 232);
+    }
+    &:hover::after{
+        width: 100%;
+    }
+}
+
+.nav-items .items .item:not(:first-child):not(:nth-child(2)):not(:nth-child(3)){
+    padding: 8px 15px;
+    border-radius: 10px;
+    background-color: rgb(218, 0, 0);
+    font-size: 1rem;
+    &:hover{
+        background-color: aqua;
+    }
+}
+.nav-items .items .item:last-child img{
+    width: 50px;
+    margin-left: -20px;
+}
+
+.mobileMenu{
+    display: flex;
+}
+.mobile-menuIcon{
+    display: none;
+    cursor: pointer;
+    font-size: 1.9rem;
+    transition: 0.2s;
+    &:hover{
+        transform: scale(1.2);
+    }
+}
+
+/* media query */
+@media (max-width:780px) {
+    .nav-items{
+        padding: 7px 15px;
+    }
+    .nav-items .items{
+        /* display: none; */
+        position: absolute;
+        top: 59px;
+        right: 18px;
+        flex-direction: column;
+        background-color: rgb(57, 179, 0);
+        padding:20px;
+        padding-right: 40px;
+        gap: 20px;
+        align-items: flex-start;
+        border-radius: 10px;
+    }
+    .nav-items .mobileMenu{
+        display: none;
+    }
+    .nav-items .mobile-menuIcon{
+        display: block;
+    }
+    .nav-items .nav-logo{
+        font-size: 1.6rem;
+    }
+}

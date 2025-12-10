@@ -1,0 +1,10 @@
+.hero-page{
+    /* height: 300px; */
+    background: linear-gradient(
+      rgba(12, 12, 12, 0.7),
+      rgba(10, 10, 10, 0.7)
+    ),
+    url('./assets/library.png');
+    background-size: cover;
+   background-position: center;
+}
