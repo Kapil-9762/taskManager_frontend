@@ -5,7 +5,8 @@ const Task = ({ task, id, delId,updtFun,updateId }) => {
   const handleDelete = () => {
     delId(id);
   }
-  const handleUpdate = () => {
+  const handleUpdate = (e) => {
+    e.preventDefault();
     updtFun(updateId);
   }
   return (

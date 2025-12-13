@@ -5,6 +5,7 @@ import './Signup.css';
 import { Link, useNavigate } from 'react-router-dom';
 const Signup = () => {
   const navigate = useNavigate();
+  const [loader, setLoader] = useState("Sign Up");
   const [signInputs, setSignInputs] = useState({
     username: "",
     email: "",
@@ -16,6 +17,7 @@ const Signup = () => {
   }
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoader("Loading...")
     try {
       // console.log(signInputs);
       await axios
@@ -33,6 +35,7 @@ const Signup = () => {
     } catch (error) {
       console.log(error.message);
     }
+    setLoader("Sign Up");
   }
   return (
     <div className='signup container flex jc-center al-center'>
@@ -45,7 +48,7 @@ const Signup = () => {
               autoComplete='off' value={signInputs.email} onChange={handleSignupInput} required/>
             <input type="password" name='password' placeholder='Enter your password' autoComplete='off' value={signInputs.password} onChange={handleSignupInput} required/>
             <p>have you already an account? <Link className='sign-in' to="/signin">Sign In</Link></p>
-            <button type="submit">Sign Up</button>
+            <button type="submit">{loader}</button>
         </form>
       </div>
     </div>

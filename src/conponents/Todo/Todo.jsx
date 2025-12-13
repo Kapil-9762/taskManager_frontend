@@ -8,6 +8,7 @@ import axios from 'axios';
 let updateArray=[];
 const Todo = () => {
   let userId = localStorage.getItem("id");
+  const [loader, setLoader] = useState(false);
   const [task, setTask] = useState({ title: "", body: "" });
   const [array, setArray] = useState([]);
   const [displayUpdate, setDisUpdate] = useState(false);
@@ -16,8 +17,10 @@ const Todo = () => {
     const { name, value } = e.target;
     setTask({ ...task, [name]: value });
   }
+  // adding task
   const handleSubmit =async (e) => {
     e.preventDefault();
+    setLoader(true);
     try {
       await axios.post(`${import.meta.env.VITE_API_URL}/api/v2/addTask`,{title:task.title,body:task.body,userId})
         .then((response) => {
@@ -34,6 +37,7 @@ const Todo = () => {
     } catch (error) {      
       toast.error(error.message);
     }
+    setLoader(false);
     setTask({title:"",body:""})
   }
 
@@ -84,7 +88,7 @@ const Todo = () => {
             <form className='flex' onSubmit={handleSubmit}>
               <input type="text" name='title' placeholder='Enter task name' value={task.title} onChange={(handleTask)} required/>
               <textarea name="body" cols="30" rows="1" placeholder='Write your task...' value={task.body} onChange={handleTask} required/>
-              <button type="submit">Add Task</button>
+              <button type="submit">{loader ? "Adding" : "Add Task"}</button>
             </form>
          <div className="todo-tasks flex f-col gap-20">
           {

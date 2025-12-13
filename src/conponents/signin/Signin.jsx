@@ -8,6 +8,7 @@ import { authActoins } from '../../store/authSlice';
 const Signin = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const [loader, setLoader] = useState("Sign In");
   const [signinInputs, setSignInputs] = useState({
     email: "",
     password: ""
@@ -19,6 +20,7 @@ const Signin = () => {
   }
   const handleSigninSubmit =async (e) => {
     e.preventDefault();
+    setLoader("Loading...")
     try {
       await axios
         .post(`${import.meta.env.VITE_API_URL}/api/v1/signin`, signinInputs)
@@ -39,6 +41,7 @@ const Signin = () => {
       toast.error(error.message);
     }
     // console.log(signinInputs);
+    setLoader("Sign In");
     setSignInputs({email: "",password: ""})
   }
   return (
@@ -50,7 +53,7 @@ const Signin = () => {
             <input type="email" name='email' placeholder='Enter your email' pattern="^[a-z0-9]+@gmail\.com$" autoComplete='off' value={signinInputs.email} onChange={handlesigninInputss} required/>
             <input type="password" name='password' placeholder='Enter your password' autoComplete='off' value={signinInputs.password} onChange={handlesigninInputss} required/>
             <p>Don't have an account? <Link className='sign-in' to="/signup">Sign Up</Link></p>
-            <button type="submit">Sign In</button>
+            <button type="submit">{loader}</button>
         </form>
       </div>
     </div>
