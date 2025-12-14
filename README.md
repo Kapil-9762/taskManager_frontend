@@ -1,16 +1,47 @@
-# React + Vite
+📝 MERN Todo / Task Manager App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A full-stack MERN Task Manager application with user authentication where each user can securely manage their own tasks. The app is fully responsive and follows proper frontend–backend separation.
 
-Currently, two official plugins are available:
+🚀 Features
+  1. 🔐 User Authentication (Sign Up & Sign In)
+  2. 👤 Each user has their own private tasks
+  3. ➕ Add new tasks
+  4. ✏️ Update existing tasks
+  5. 🗑️ Delete tasks
+  6. 📋 View all added tasks
+  7. 📱 Fully responsive UI (mobile & desktop)
+  8. 🔒 Secure API with protected routes
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+🛠️ Tech Stack
+1. Frontend
+   React (Vite)
+   Axios
+   CSS
+   React Hooks
 
-## React Compiler
+2. Backend
+   Node.js
+   Express.js
+   MongoDB (Mongoose)
+   JWT Authentication
+   bcrypt for password hashing
+   dotenv for environment variables
+Backend repository link:-https://github.com/Kapil-9762/taskManager_backend
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+🔑 Authentication Flow
+  1. User registers using Sign Up
+  2. User logs in using Sign In
+  3. Each task is linked to a specific user
 
-## Expanding the ESLint configuration
+✅ Future Improvements
+  1. 📅 Task due dates & priority
+  2. 🔍 Search & filter tasks
+  3. 🤖 AI-powered task suggestions (Gemini integration)
+  4. 🌙 Dark mode
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+👨‍💻 Author
+ Kapil Prajapati
+ Aspiring GenAI MERN Stack Developer
+
+⭐ Support
+  If you like this project, give it a ⭐ on GitHub!
